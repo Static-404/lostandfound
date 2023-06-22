@@ -9,11 +9,10 @@ class RegistrationPage extends StatefulWidget {
 
 class _RegistrationPageState extends State<RegistrationPage> {
   final TextEditingController _nameController = TextEditingController();
-  late String _selectedDepartment;
-  late String _selectedLevel;
+  String? _selectedDepartment;
+  String? _selectedLevel;
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-  TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
 
   final List<String> _departments = ['Department 1', 'Department 2', 'Department 3'];
   final List<String> _levels = ['Level 1', 'Level 2', 'Level 3'];
@@ -46,7 +45,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               items: _departments.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Text(value),
+                  child: Text(value??""),
                 );
               }).toList(),
               decoration: InputDecoration(
@@ -64,7 +63,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               items: _levels.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Text(value),
+                  child: Text(value??""),
                 );
               }).toList(),
               decoration: InputDecoration(
@@ -91,12 +90,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
             ElevatedButton(
               onPressed: () {
                 String name = _nameController.text;
-                String department = _selectedDepartment;
-                String level = _selectedLevel;
+                String? department = _selectedDepartment;
+                String? level = _selectedLevel;
                 String password = _passwordController.text;
                 String confirmPassword = _confirmPasswordController.text;
-                // Perform your registration logic here
-                // You can validate the inputs or make API calls to create a new user
+
               },
               child: Text('Register'),
             ),
