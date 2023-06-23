@@ -20,7 +20,7 @@ appBar: AppBar(
         children: [
           GestureDetector(
             onTap: (){
-
+              Navigator.pushNamed(context, 'found');
             },
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 40.0),
@@ -47,7 +47,7 @@ appBar: AppBar(
           const SizedBox(height: 5.0,),
           GestureDetector(
             onTap: (){
-
+              Navigator.pushNamed(context, 'lost');
             },
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 40.0),
