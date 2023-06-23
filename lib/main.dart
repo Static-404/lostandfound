@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lostandfound/screens/home.dart';
 import 'package:lostandfound/screens/login.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:lostandfound/screens/register.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 void main() async {
@@ -24,10 +26,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "register",
+      initialRoute: "home",
       routes: {
         "login": (context) => const LoginPage(),
         "register": (context) => const RegistrationPage(),
+        "home": (context) => const HomePage(),
       },
     );
   }
